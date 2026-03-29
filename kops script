@@ -1,0 +1,16 @@
+# kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+# kops (latest)
+curl -LO https://github.com/kubernetes/kops/releases/latest/download/kops-linux-amd64
+
+# permissions
+chmod +x kubectl kops-linux-amd64
+
+# move to path
+sudo mv kubectl /usr/local/bin/
+sudo mv kops-linux-amd64 /usr/local/bin/kops
+
+# verify
+kubectl version --client
+kops version
